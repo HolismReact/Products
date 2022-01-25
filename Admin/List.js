@@ -8,8 +8,8 @@ const filters = <>
     />
     <Enum
         column='AttributeId'
-        placholder='Attribute'
-        enum='AttributeTypes'
+        placeholder='Attribute'
+        entityType='AttributeTypes'
     />
 </>
 
@@ -23,7 +23,7 @@ const Products = () => {
     return <List
         title='Products'
         entityType='Product'
-        filters={filter}
+        filters={filters}
         card={card}
         upsert={UpsertProduct}
         hasDelete={true}

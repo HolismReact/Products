@@ -1,4 +1,5 @@
-import { List, Text, Enum } from '@List'
+import CollectionsIcon from '@mui/icons-material/Collections'
+import { List, Text, Enum, ItemAction } from '@List'
 import UpsertProduct from './Upsert'
 
 const filters = <>
@@ -19,12 +20,23 @@ const card = (item) => {
     </div>
 }
 
+const itemActions = (item) => {
+    return <>
+        <ItemAction
+            title='Manage images'
+            icon={CollectionsIcon}
+            goTo={`/product/images?productId=${item.id}`}
+        />
+    </>
+}
+
 const Products = () => {
     return <List
         title='Products'
         entityType='Product'
         filters={filters}
         card={card}
+        itemActions={itemActions}
         upsert={UpsertProduct}
         hasDelete={true}
         hasEdit={true}

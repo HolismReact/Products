@@ -17,4 +17,4 @@ const UploadImage = () => {
     />
 }
 
-export default UploadImages
+export default UploadImage
